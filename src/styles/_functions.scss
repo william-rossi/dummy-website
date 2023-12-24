@@ -1,0 +1,22 @@
+@import './variables';
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin contentPadding {
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+@mixin contentWidth {
+    width: 100%;
+    max-width: 1200px;
+}
+
+@mixin placeCenter {
+    display: grid;
+    place-items: center;
+}

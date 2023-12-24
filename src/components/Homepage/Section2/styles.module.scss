@@ -1,0 +1,13 @@
+@import "../../../styles/functions";
+
+.container {
+    min-height: 50svh;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+.title {
+    &>h2 {
+        filter: brightness(2);
+    }
+}

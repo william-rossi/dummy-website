@@ -1,0 +1,131 @@
+@import "../themes/theme-b.scss";
+@import "./functions";
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(360deg, rgba(red($foreground), green($foreground), blue($foreground), 1) 0%, rgba(red($background), green($background), blue($background), 1) 100%);
+  color: $text;
+  overflow-x: hidden;
+}
+
+main {
+  margin: 0 auto;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  @include contentPadding;
+  @include contentWidth;
+}
+
+img {
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: $text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span,
+b,
+strong {
+  text-align: center;
+}
+
+h1 {
+  font-size: 4.0vh;
+}
+
+h2 {
+  font-size: 3.0vh;
+}
+
+h3 {
+  font-size: 2.5vh;
+}
+
+p,
+span,
+b,
+strong,
+a {
+  font-size: 2.2vh;
+}
+
+button {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: $transition-short;
+  font-weight: bold;
+  cursor: pointer;
+  color: $text;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+input {
+  border: none;
+  outline: none;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 1.0rem;
+  background-color: #0000003d;
+  padding: 10px;
+  text-align: center;
+  transition: $transition-short;
+  color: $text;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+}
+
+::selection {
+  color: $text;
+  background: $foreground;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $foreground;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $foreground;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {}

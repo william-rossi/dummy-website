@@ -1,0 +1,43 @@
+@import "../../styles/functions";
+@import "../../themes/theme-b.scss";
+
+.container {
+    width: 35svh;
+    height: 7.5svh;
+    padding: 1vh 2vh 1vh 2vh;
+    @include flexCenter;
+    background-color: rgba(red($background), green($background), blue($background), 0.2);
+    filter: brightness(2.5);
+    cursor: pointer;
+    user-select: none;
+    border-radius: 1vh;
+    transition: $transition-short;
+    border: 0.3vh solid $background;
+
+    &:hover {
+        filter: brightness(3);
+    }
+
+    &>div {
+        height: 100%;
+        @include flexCenter;
+        gap: 1.5vh;
+    }
+
+    &>div span {
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    &>div svg {
+        height: 60%;
+        width: 60%;
+        fill: $text;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}

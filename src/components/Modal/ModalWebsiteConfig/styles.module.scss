@@ -1,0 +1,80 @@
+@import "../../../styles/functions";
+@import "../../../themes/theme-b.scss";
+
+.background {
+    position: absolute;
+    background-color: #00000058;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    color: white;
+    width: 50%;
+    height: 50%;
+    max-height: 90%;
+    border-radius: 1vh;
+    margin-top: 5vh;
+    background-color: rgba(0, 0, 0, 0.085);
+    box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5vh);
+    border: 0.2vh solid rgba(255, 255, 255, 0.3);
+}
+
+.actions {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 0.5vh;
+    padding-left: 0.5vh;
+    background-color: rgba(255, 255, 255, 0.795);
+    box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.5vh);
+    border-radius: 1vh 1vh 0 0;
+
+    &>svg {
+        height: 70%;
+        fill: #333;
+        cursor: pointer;
+    }
+}
+
+.configFeatures {
+    padding: 1vh;
+
+    &>span {
+        font-weight: bold;
+    }
+}
+
+.themes {
+    display: flex;
+    gap: 1vh;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+
+    &>span {
+        padding: 1vh;
+        border-radius: 0.5vh;
+        background-color: rgba(255, 255, 255, 0.664);
+        box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(0.5vh);
+        border: 0.2vh solid rgba(255, 255, 255, 0.3);
+        color: #333;
+        font-weight: 500;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
+}
