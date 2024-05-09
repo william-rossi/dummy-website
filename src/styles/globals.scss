@@ -1,4 +1,4 @@
-@import "../themes/theme-b.scss";
+@import "../styles/index.scss";
 @import "./functions";
 @import "./variables";
 
@@ -9,8 +9,8 @@
 }
 
 body {
-  background: linear-gradient(360deg, rgba(red($foreground), green($foreground), blue($foreground), 1) 0%, rgba(red($background), green($background), blue($background), 1) 100%);
-  color: $text;
+  background: linear-gradient(360deg, rgba(red(themed("foreground")), green(themed("foreground")), blue(themed("foreground")), 1) 0%, rgba(red(themed("background")), green(themed("background")), blue(themed("background")), 1) 100%);
+  color: themed("text");
   overflow-x: hidden;
 }
 
@@ -28,7 +28,7 @@ img {
 
 a {
   text-decoration: none;
-  color: $text;
+  color: themed("text");
 }
 
 h1,
@@ -41,6 +41,7 @@ span,
 b,
 strong {
   text-align: center;
+  color: themed("text");
 }
 
 h1 {
@@ -70,7 +71,6 @@ button {
   transition: $transition-short;
   font-weight: bold;
   cursor: pointer;
-  color: $text;
 
   &:hover {
     filter: brightness(1.2);
@@ -87,7 +87,6 @@ input {
   padding: 10px;
   text-align: center;
   transition: $transition-short;
-  color: $text;
 
   &:hover {
     filter: brightness(1.2);
@@ -95,8 +94,8 @@ input {
 }
 
 ::selection {
-  color: $text;
-  background: $foreground;
+  color: themed("text");
+  background: themed("foreground");
 }
 
 ::-webkit-scrollbar {
@@ -104,15 +103,15 @@ input {
 }
 
 ::-webkit-scrollbar-track {
-  background: $background;
+  background: themed("background");
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $foreground;
+  background: themed("foreground");
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $foreground;
+  background: themed("foreground");
 }
 
 /* Extra small devices (phones, 600px and down) */

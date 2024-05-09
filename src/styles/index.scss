@@ -1,0 +1,36 @@
+@import './themes/dark.scss';
+@import './themes/light.scss';
+
+$themes: (
+    light: $light,
+    dark: $dark,
+);
+
+@mixin themify($themes) {
+    @each $name, $values in $themes {
+        .#{$name} {
+            $theme-map: $values !global;
+            @content;
+        }
+    }
+}
+
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+@include themify($themes) {
+
+    // h1,
+    // h2,
+    // h3,
+    // h4,
+    // h5,
+    // p,
+    // span,
+    // b,
+    // a,
+    // strong {
+    //     color: themed("text");
+    // }
+}

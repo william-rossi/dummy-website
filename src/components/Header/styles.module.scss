@@ -1,4 +1,4 @@
-@import "../../themes/theme-b.scss";
+@import "../../styles/index.scss";
 @import "../../styles/functions";
 
 .container {
@@ -7,7 +7,7 @@
     width: 100vw;
     height: 10svh;
     @include placeCenter;
-    background-color: rgba(red($background), green($background), blue($background), 0.7);
+    background-color: rgba(red(themed("background")), green(themed("background")), blue(themed("background")), 0.7);
     box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.5vh);
     z-index: 9;

@@ -1,5 +1,5 @@
 @import "../../../styles/functions";
-@import "../../../themes/theme-b.scss";
+@import "../../../styles/index.scss";
 
 .background {
     position: absolute;
@@ -14,13 +14,11 @@
 }
 
 .container {
-    color: white;
     width: 50%;
     height: 50%;
     max-height: 90%;
     border-radius: 1vh;
     margin-top: 5vh;
-    background-color: rgba(0, 0, 0, 0.085);
     box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.5vh);
     border: 0.2vh solid rgba(255, 255, 255, 0.3);
@@ -63,12 +61,12 @@
     &>span {
         padding: 1vh;
         border-radius: 0.5vh;
-        background-color: rgba(255, 255, 255, 0.664);
+        background-color: themed("background");
         box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(0.5vh);
-        border: 0.2vh solid rgba(255, 255, 255, 0.3);
-        color: #333;
+        border: 0.2vh solid themed("highlight");
         font-weight: 500;
+        color: themed('highlight');
         cursor: pointer;
     }
 }
