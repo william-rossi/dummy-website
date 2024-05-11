@@ -16,12 +16,13 @@
 
     &>h1 {
         filter: brightness(2);
-        font-size: 4.5vh;
+        font-size: 4.8vh;
         text-shadow: 0 0 1vh rgba(0, 0, 0, 0.142);
     }
 
     &>p {
         width: 65%;
+        font-size: 2.5vh;
     }
 
     &> :last-child {

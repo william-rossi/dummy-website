@@ -1,18 +1,17 @@
 @import "../../styles/functions";
-@import "../../styles/index.scss";
 
 .container {
     width: 35svh;
     height: 7.5svh;
     padding: 1vh 2vh 1vh 2vh;
     @include flexCenter;
-    background-color: rgba(red(themed("background")), green(themed("background")), blue(themed("background")), 0.2);
+    background-color: var(--background-color, rgba(0, 0, 0, 0.2));
     filter: brightness(2.5);
     cursor: pointer;
     user-select: none;
     border-radius: 1vh;
     transition: $transition-short;
-    border: 0.3vh solid themed("background");
+    border: 0.3vh solid var(--background-color);
 
     &:hover {
         filter: brightness(3);
@@ -27,12 +26,13 @@
     &>div span {
         font-weight: bold;
         white-space: nowrap;
+        color: var(--text-color);
     }
 
     &>div svg {
         height: 60%;
         width: 60%;
-        fill: themed("text");
+        fill: var(--text-color);
     }
 }
 

@@ -1,8 +1,7 @@
 @import "../../../styles/functions";
-@import "../../../styles/index.scss";
 
 .background {
-    position: absolute;
+    position: fixed;
     background-color: #00000058;
     z-index: 99;
     top: 0;
@@ -21,6 +20,7 @@
     margin-top: 5vh;
     box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.5vh);
+    background-color: var(--foreground-color);
     border: 0.2vh solid rgba(255, 255, 255, 0.3);
 }
 
@@ -28,27 +28,32 @@
     height: 10%;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    padding-right: 0.5vh;
-    padding-left: 0.5vh;
-    background-color: rgba(255, 255, 255, 0.795);
+    padding-right: 1.5vh;
+    padding-left: 1.5vh;
+    background-color: var(--background-color);
     box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.5vh);
     border-radius: 1vh 1vh 0 0;
 
     &>svg {
         height: 70%;
-        fill: #333;
+        fill: var(--text-color);
         cursor: pointer;
+    }
+
+    &>span {
+        font-weight: bold;
     }
 }
 
 .configFeatures {
-    padding: 1vh;
+    padding: 1.5vh;
 
     &>span {
-        font-weight: bold;
+        font-size: 2.5vh;
+        color: var(--text-color);
     }
 }
 
@@ -59,15 +64,24 @@
     margin-top: 1vh;
 
     &>span {
-        padding: 1vh;
+        padding: 1.5vh;
+        padding-left: 2.5vh;
+        padding-right: 2.5vh;
         border-radius: 0.5vh;
-        background-color: themed("background");
+        background-color: var(--background-color);
         box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(0.5vh);
-        border: 0.2vh solid themed("highlight");
+        border: 0.2vh solid var(--highlight-color);
         font-weight: 500;
-        color: themed('highlight');
+        color: var(--text-color);
         cursor: pointer;
+        font-weight: bold;
+        text-transform: capitalize;
+        transition: .1s;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
     }
 }
 

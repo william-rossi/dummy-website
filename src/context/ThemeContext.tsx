@@ -3,50 +3,76 @@
 import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction, useEffect } from 'react';
 import CookieHandlers from '@/Helpers/cookieHandlers';
 
-type themeType = 'light' | 'dark' | 'dracula';
+export type themeType = 'light' | 'dark' | 'neon';
 
-export const themesMap: themeType[] = ['light', 'dark', 'dracula'];
+export type fontType = 'default' | 'monospace' | 'sans-serif' | 'cursive' | 'math' | 'system-ui';
 
-interface IThemeProps {
+export const themesMap: themeType[] = ['light', 'dark', 'neon'];
+export const fontsMap: fontType[] = ['default', 'monospace', 'sans-serif', 'cursive', 'math', 'system-ui'];
+
+interface ThemeProps {
   children: ReactNode;
 }
 
-interface IThemeContextValues {
-  themeContext: themeType;
-  setThemeContext: Dispatch<SetStateAction<themeType>>;
+interface ThemeContextValuesProps {
+  theme: themeType;
+  font: fontType;
+  setTheme: Dispatch<SetStateAction<themeType>>;
+  setFont: Dispatch<SetStateAction<fontType>>;
 }
 
-const context = createContext<IThemeContextValues | undefined>(undefined);
+const context = createContext<ThemeContextValuesProps | undefined>(undefined);
 
-export const ThemeProvider: React.FC<IThemeProps> = ({ children }: IThemeProps) => {
-  const [themeContext, setThemeContext] = useState<themeType>('light'); // Inicialize com 'light' no servidor
+export const ThemeProvider: React.FC<ThemeProps> = ({ children }: ThemeProps) => {
+  const [theme, setTheme] = useState<themeType>('light');
+  const [font, setFont] = useState<fontType>('default');
 
   useEffect(() => {
     const storedThemeString = CookieHandlers.getCookie('theme');
+    const storedFontString = CookieHandlers.getCookie('font');
+
     if (storedThemeString) {
       const parsedTheme = JSON.parse(storedThemeString) as themeType;
-      setThemeContext(parsedTheme); // Atualize o tema no cliente após a renderização
+      setTheme(parsedTheme);
     }
-  }, []); // Executar apenas uma vez no cliente após a montagem
+
+    if (storedFontString) {
+      const parsedFont = JSON.parse(storedFontString) as fontType;
+      setFont(parsedFont);
+    }
+  }, []);
 
   useEffect(() => {
-    // Atualize a cookie com o novo valor do tema
-    CookieHandlers.setCookie('theme', JSON.stringify(themeContext), 7);
-  }, [themeContext]); // Executar sempre que o temaContexto mudar
+    CookieHandlers.setCookie('theme', JSON.stringify(theme), 7);
 
-  const contextValue: IThemeContextValues = {
-    themeContext,
-    setThemeContext,
+    document.getElementsByTagName("body")[0].className = theme;
+
+  }, [theme]);
+
+  useEffect(() => {
+    CookieHandlers.setCookie('font', JSON.stringify(font), 7);
+
+    if (font !== 'default')
+      document.getElementsByTagName("body")[0].style.fontFamily = font;
+    else
+      document.getElementsByTagName("body")[0].style.fontFamily = "";
+  }, [font])
+
+  const contextValue: ThemeContextValuesProps = {
+    theme,
+    font,
+    setTheme,
+    setFont
   };
 
   return <context.Provider value={contextValue}>{children}</context.Provider>;
 };
 
-export const useThemeContext = (): IThemeContextValues => {
+export const useTheme = (): ThemeContextValuesProps => {
   const ctx = useContext(context);
 
   if (!ctx) {
-    throw new Error('useThemeContext must be used within a ThemeProvider');
+    throw new Error('useTheme must be used within a ThemeProvider');
   }
 
   return ctx;

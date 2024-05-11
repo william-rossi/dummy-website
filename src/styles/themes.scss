@@ -1,0 +1,22 @@
+// Color palette https://colorhunt.co/palette/27374d526d829db2bfdde6ed
+.dark {
+    --text-color: #9DB2BF;
+    --background-color: #27374D;
+    --foreground-color: #526D82;
+    --highlight-color: #DDE6ED;
+}
+
+// Color palette https://colorhunt.co/palette/c2faf1f6f6f6dfeff0295e6a
+.light {
+    --text-color: #333;
+    --background-color: #F8F6F4;
+    --foreground-color: #D2E9E9;
+    --highlight-color: #E3F4F4;
+}
+
+.neon {
+    --text-color: #FF204E;
+    --background-color: #A0153E;
+    --foreground-color: #5D0E41;
+    --highlight-color: #00224D;
+}
