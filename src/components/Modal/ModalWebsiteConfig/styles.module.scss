@@ -13,19 +13,17 @@
 }
 
 .container {
-    width: 50%;
-    height: 50%;
+    width: 60vw;
     max-height: 90%;
     border-radius: 1vh;
     margin-top: 5vh;
     box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.5vh);
-    background-color: var(--foreground-color);
     border: 0.2vh solid rgba(255, 255, 255, 0.3);
 }
 
 .actions {
-    height: 10%;
+    height: 5vh;
     width: 100%;
     display: flex;
     justify-content: space-between;

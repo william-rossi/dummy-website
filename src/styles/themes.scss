@@ -1,22 +1,64 @@
-// Color palette https://colorhunt.co/palette/27374d526d829db2bfdde6ed
+// Reference https://colorhunt.co
+
 .dark {
+    --text-color: #EEEEEE;
+    --background-color: #31363F;
+    --foreground-color: #222831;
+    --highlight-color: #76ABAE;
+}
+
+.dark-blue {
     --text-color: #9DB2BF;
     --background-color: #27374D;
     --foreground-color: #526D82;
     --highlight-color: #DDE6ED;
 }
 
-// Color palette https://colorhunt.co/palette/c2faf1f6f6f6dfeff0295e6a
+.dracula {
+    --text-color: #635985;
+    --background-color: #18122B;
+    --foreground-color: #393053;
+    --highlight-color: #443C68;
+}
+
 .light {
-    --text-color: #333;
+    --text-color: #333333;
     --background-color: #F8F6F4;
     --foreground-color: #D2E9E9;
     --highlight-color: #E3F4F4;
 }
 
+.light-soft {
+    --text-color: #333333;
+    --background-color: #E3F4F4;
+    --foreground-color: #D2E9E9;
+    --highlight-color: #F8F6F4;
+}
+
 .neon {
-    --text-color: #FF204E;
-    --background-color: #A0153E;
-    --foreground-color: #5D0E41;
-    --highlight-color: #00224D;
+    --text-color: #ffffff;
+    --background-color: #836FFF;
+    --foreground-color: #15F5BA;
+    --highlight-color: #F0F3FF;
+}
+
+.neon-up {
+    --text-color: #ffffff;
+    --background-color: #0F6292;
+    --foreground-color: #16FF00;
+    --highlight-color: #FFED00;
+}
+
+.vintage {
+    --text-color: #FFF2E1;
+    --background-color: #A79277;
+    --foreground-color: #D1BB9E;
+    --highlight-color: #EAD8C0;
+}
+
+.vintage-up {
+    --text-color: #E4C59E;
+    --background-color: #322C2B;
+    --foreground-color: #803D3B;
+    --highlight-color: #AF8260;
 }

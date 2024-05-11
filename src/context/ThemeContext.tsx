@@ -3,11 +3,11 @@
 import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction, useEffect } from 'react';
 import CookieHandlers from '@/Helpers/cookieHandlers';
 
-export type themeType = 'light' | 'dark' | 'neon';
+export type themeType = 'light' | 'light-soft' | 'dark' | 'dark-blue' | 'dracula' | 'neon' | 'neon-up' | 'vintage' | 'vintage-up';
 
 export type fontType = 'default' | 'monospace' | 'sans-serif' | 'cursive' | 'math' | 'system-ui';
 
-export const themesMap: themeType[] = ['light', 'dark', 'neon'];
+export const themesMap: themeType[] = ['light', 'light-soft', 'dark', 'dark-blue', 'dracula', 'neon', 'neon-up', 'vintage', 'vintage-up'];
 export const fontsMap: fontType[] = ['default', 'monospace', 'sans-serif', 'cursive', 'math', 'system-ui'];
 
 interface ThemeProps {

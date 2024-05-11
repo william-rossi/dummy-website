@@ -5,16 +5,21 @@
     height: 7.5svh;
     padding: 1vh 2vh 1vh 2vh;
     @include flexCenter;
-    background-color: var(--background-color, rgba(0, 0, 0, 0.2));
-    filter: brightness(2.5);
     cursor: pointer;
     user-select: none;
     border-radius: 1vh;
     transition: $transition-short;
-    border: 0.3vh solid var(--background-color);
+    border: 0.5vh solid var(--text-color);
+    filter: brightness(1.3);
 
     &:hover {
-        filter: brightness(3);
+        background-color: var(--text-color);
+
+        &>div span,
+        &>div svg {
+            fill: var(--background-color);
+            color: var(--background-color);
+        }
     }
 
     &>div {

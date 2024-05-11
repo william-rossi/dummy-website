@@ -42,7 +42,7 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                     <div className={styles.themes}>
                         {
                             themesMap.map((theme, index) => (
-                                <span key={index} onClick={() => setTheme(theme)}>{theme}</span>
+                                <span key={index} onClick={() => setTheme(theme)}>{theme.replaceAll('-', ' ')}</span>
                             ))
                         }
                     </div>
@@ -52,7 +52,7 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                     <div className={styles.themes}>
                         {
                             fontsMap.map((font, index) => (
-                                <span key={index} onClick={() => setFont(font)}>{font}</span>
+                                <span key={index} onClick={() => setFont(font)}>{font.replaceAll('-', ' ')}</span>
                             ))
                         }
                     </div>

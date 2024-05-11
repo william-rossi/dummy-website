@@ -3,6 +3,7 @@ import { Nunito } from 'next/font/google'
 import Header from '@/components/Header/Header'
 import WebsiteConfig from '@/components/FloatButtons/WebsiteConfig/WebsiteConfig'
 import { ThemeProvider } from '@/context/ThemeContext'
+import WhatsApp from '@/components/FloatButtons/WhatsApp/WhatsApp'
 
 export const metadata = {
   title: 'Your brand',
@@ -28,6 +29,7 @@ export default function RootLayout({
             {children}
           </main>
           <WebsiteConfig />
+          <WhatsApp />
         </body>
       </ThemeProvider>
     </html>
