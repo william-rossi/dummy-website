@@ -5,7 +5,7 @@ const Section4 = () => {
     return (
         <section className={styles.container}>
             <div className={styles.image}>
-                <img src={'images/homepage/concept3.webp'} alt={'image1'} />
+                <img src={'images/homepage/concept3.webp'} alt={'image3'} />
             </div>
             <div className={styles.content}>
                 <h2 suppressContentEditableWarning contentEditable spellCheck={false}>Praesentium voluptatum deleniti</h2>
