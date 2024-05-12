@@ -6,9 +6,11 @@
     width: 100vw;
     height: 10svh;
     @include placeCenter;
+    background-color: var(--background-opacity-color);
     box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0.5vh);
     z-index: 9;
+    user-select: none;
 }
 
 .subContainer {
@@ -16,6 +18,7 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    position: relative;
     @include contentPadding;
     @include contentWidth;
 }
@@ -24,16 +27,36 @@
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+
+    &>img,
+    &>svg {
+        cursor: pointer;
+        filter: drop-shadow(0 0 0.5vh rgba(0, 0, 0, 0.118));
+        fill: var(--text-color);
+        position: absolute;
+        @include contentPadding;
+        left: 0;
+    }
+
+    &>svg {
+        height: 65%;
+    }
 
     &>img {
-        cursor: pointer;
-        width: 65%;
-        height: 65%;
-        filter: drop-shadow(0 0 0.5vh rgba(0, 0, 0, 0.118));
+        height: 45%;
+    }
+
+    path {
+        fill: var(--text-color);
     }
 }
 
 .navbarContainer {
+    @include flexCenter;
+}
+
+.defaultNav {
     height: 100%;
     @include flexCenter;
     gap: 3vw;
@@ -45,5 +68,95 @@
 
     &>a:hover {
         opacity: 0.7;
+    }
+}
+
+.burger {
+    height: 65%;
+    fill: var(--text-color);
+    position: absolute;
+    right: 0;
+    @include contentPadding;
+    cursor: pointer;
+    display: none;
+
+    path {
+        fill: var(--text-color);
+        stroke: var(--text-color);
+    }
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-color: #0000006e;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.sideBar {
+    height: 100%;
+    width: 70%;
+    position: absolute;
+    right: 0;
+    background-color: var(--foreground-color);
+    animation: sideBar .5s forwards;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    align-items: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+
+    &>a {
+        font-size: 2.5vh;
+    }
+}
+
+.closeSideBar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2.5vh;
+
+    &>svg {
+        fill: var(--text-color);
+        width: 5vh;
+        height: 5vh;
+        transform: rotate(180deg);
+        cursor: pointer;
+    }
+}
+
+@keyframes sideBar {
+    from {
+        right: -50%;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: 7vh;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .defaultNav {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .sideBar {
+        width: 100%;
     }
 }

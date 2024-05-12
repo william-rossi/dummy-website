@@ -1,6 +1,7 @@
 @import "./functions";
 @import "./themes.scss";
 @import "./variables";
+@import "./fonts.scss";
 
 * {
   box-sizing: border-box;
@@ -10,6 +11,7 @@
 
 body {
   overflow-x: hidden;
+  background-image: linear-gradient(to bottom, var(--background-color), var(--foreground-color));
   background-color: var(--background-color);
 }
 
@@ -38,21 +40,22 @@ h5,
 p,
 span,
 b,
-strong {
+strong,
+small {
   text-align: center;
   color: var(--text-color);
 }
 
 h1 {
-  font-size: 4.0vh;
+  font-size: 7.0vh;
 }
 
 h2 {
-  font-size: 3.0vh;
+  font-size: 5.0vh;
 }
 
 h3 {
-  font-size: 2.5vh;
+  font-size: 3vh;
 }
 
 p,
@@ -60,13 +63,17 @@ span,
 b,
 strong,
 a {
-  font-size: 2.2vh;
+  font-size: 2.5vh;
+}
+
+small {
+  font-size: 2vh;
 }
 
 button {
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5vh;
   transition: $transition-short;
   font-weight: bold;
   cursor: pointer;
@@ -80,11 +87,11 @@ button {
 input {
   border: none;
   outline: none;
-  height: 35px;
-  border-radius: 5px;
-  font-size: 1.0rem;
-  background-color: #0000003d;
-  padding: 10px;
+  height: 4.5vh;
+  border-radius: 0.5vh;
+  font-size: 2.2vh;
+  background-color: var(--background-color);
+  padding: 1vh;
   text-align: center;
   transition: $transition-short;
   color: var(--text-color);
@@ -95,8 +102,8 @@ input {
 }
 
 ::selection {
-  color: var(--text-color);
-  background: var(--foreground-color);
+  color: var(--background-color);
+  background: var(--highlight-color);
 }
 
 ::-webkit-scrollbar {

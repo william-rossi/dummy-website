@@ -3,20 +3,23 @@
 .dark {
     --text-color: #EEEEEE;
     --background-color: #31363F;
-    --foreground-color: #222831;
+    --background-opacity-color: #31363f4e;
+    --foreground-color: #15181e;
     --highlight-color: #76ABAE;
 }
 
 .dark-blue {
-    --text-color: #9DB2BF;
+    --text-color: #d0ecfd;
     --background-color: #27374D;
+    --background-opacity-color: #27374D4e;
     --foreground-color: #526D82;
     --highlight-color: #DDE6ED;
 }
 
 .dracula {
-    --text-color: #635985;
+    --text-color: #8678b2;
     --background-color: #18122B;
+    --background-opacity-color: #18122B4e;
     --foreground-color: #393053;
     --highlight-color: #443C68;
 }
@@ -24,6 +27,7 @@
 .light {
     --text-color: #333333;
     --background-color: #F8F6F4;
+    --background-opacity-color: #F8F6F44e;
     --foreground-color: #D2E9E9;
     --highlight-color: #E3F4F4;
 }
@@ -31,6 +35,7 @@
 .light-soft {
     --text-color: #333333;
     --background-color: #E3F4F4;
+    --background-opacity-color: #E3F4F44e;
     --foreground-color: #D2E9E9;
     --highlight-color: #F8F6F4;
 }
@@ -38,6 +43,7 @@
 .neon {
     --text-color: #ffffff;
     --background-color: #836FFF;
+    --background-opacity-color: #836FFF4e;
     --foreground-color: #15F5BA;
     --highlight-color: #F0F3FF;
 }
@@ -45,6 +51,7 @@
 .neon-up {
     --text-color: #ffffff;
     --background-color: #0F6292;
+    --background-opacity-color: #0F62924e;
     --foreground-color: #16FF00;
     --highlight-color: #FFED00;
 }
@@ -52,6 +59,7 @@
 .vintage {
     --text-color: #FFF2E1;
     --background-color: #A79277;
+    --background-opacity-color: #A792774e;
     --foreground-color: #D1BB9E;
     --highlight-color: #EAD8C0;
 }
@@ -59,6 +67,15 @@
 .vintage-up {
     --text-color: #E4C59E;
     --background-color: #322C2B;
+    --background-opacity-color: #322C2B4e;
     --foreground-color: #803D3B;
     --highlight-color: #AF8260;
+}
+
+.gold {
+    --text-color: #FFC94A;
+    --background-color: #08042a;
+    --background-opacity-color: #08042a4e;
+    --foreground-color: #795458;
+    --highlight-color: #C08B5C;
 }

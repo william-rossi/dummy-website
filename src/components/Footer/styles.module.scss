@@ -1,0 +1,57 @@
+@import "../../styles/functions";
+
+.container {
+    width: 100vw;
+    height: 20svh;
+    background-color: transparent;
+    @include placeCenter;
+    user-select: none;
+    position: relative;
+}
+
+.subContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    @include contentPadding;
+    @include contentWidth;
+}
+
+.icons {
+    display: flex;
+    gap: 2vh;
+
+    &>svg {
+        width: 4vh;
+        fill: var(--text-color);
+        cursor: pointer;
+    }
+}
+
+.privacy {
+    display: flex;
+    gap: 2vh;
+
+    &>small {
+        cursor: not-allowed;
+    }
+}
+
+.divisor {
+    height: 0.2vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background-color: var(--text-color);
+    opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+    .subContainer {
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}

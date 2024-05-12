@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
-import { fontsMap, themesMap, useTheme } from '@/context/ThemeContext';
+import { useTheme } from '@/context/ThemeContext';
+import { fontsMap } from '@/Helpers/fontTypes';
+import { themesMap } from '@/Helpers/themeTypes';
 
 interface ModalConfigProps {
     isOpen: boolean;
@@ -8,7 +10,27 @@ interface ModalConfigProps {
 }
 
 const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
-    const { font, setFont, theme, setTheme } = useTheme();
+    const { logoUrl, setLogoUrl, font, setFont, theme, setTheme } = useTheme();
+
+    const [logoInputValue, setLogoInputValue] = useState<string>(logoUrl);
+    const [isLogoFile, setIsLogoFile] = useState<boolean>(false);
+
+    const handleOnClose = () => {
+        onClose()
+        document.getElementsByTagName("body")[0].style.removeProperty('overflow')
+    }
+
+    const fileImage = () => {
+        const imageInput = document.getElementById('imgInput') as HTMLInputElement;
+
+        if (imageInput) {
+            imageInput.onchange = () => {
+                const file = imageInput.files?.[0];
+                if (file)
+                    setLogoUrl(URL.createObjectURL(file))
+            };
+        }
+    };
 
     useEffect(() => {
         if (isOpen)
@@ -22,11 +44,6 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                 handleOnClose()
         })
     }, [])
-
-    const handleOnClose = () => {
-        onClose()
-        document.getElementsByTagName("body")[0].style.removeProperty('overflow')
-    }
 
     if (!isOpen) return null;
 
@@ -47,13 +64,36 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                         }
                     </div>
                 </div>
-                <div className={`${styles.configFeatures}`}>
+                <div className={styles.configFeatures}>
                     <span>Select font ({font})</span>
                     <div className={styles.themes}>
                         {
                             fontsMap.map((font, index) => (
-                                <span key={index} onClick={() => setFont(font)}>{font.replaceAll('-', ' ')}</span>
+                                <span
+                                    key={index}
+                                    style={font !== 'default' ? { fontFamily: font } : undefined}
+                                    onClick={() => setFont(font)}>
+                                    {font.replaceAll('-', ' ')}
+                                </span>
                             ))
+                        }
+                    </div>
+                </div>
+                <div className={styles.setLogoContainer}>
+                    <span>Set your logo</span>
+                    <div className={styles.logoChoose}>
+                        <p onClick={() => setIsLogoFile(!isLogoFile)}>{isLogoFile ? "Choose URL" : "Choose file"}</p>
+                    </div>
+                    <div>
+                        {
+                            isLogoFile ?
+                                <input accept="image/*" onClick={fileImage} id={'imgInput'} type={'file'} />
+                                :
+                                <>
+                                    <input value={logoInputValue} defaultValue={logoUrl ?? ""} onChange={(e) => setLogoInputValue(e.target.value)} placeholder='URL' />
+                                    <span onClick={() => setLogoUrl(logoInputValue.trim() ?? "")}>Save</span>
+                                    {logoUrl && <div onClick={() => { setLogoUrl(""); setLogoInputValue("") }}>X</div>}
+                                </>
                         }
                     </div>
                 </div>

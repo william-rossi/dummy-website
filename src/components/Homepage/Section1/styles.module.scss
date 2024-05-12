@@ -16,7 +16,6 @@
 
     &>h1 {
         filter: brightness(2);
-        font-size: 4.8vh;
         text-shadow: 0 0 1vh rgba(0, 0, 0, 0.142);
     }
 
@@ -45,5 +44,13 @@
     to {
         opacity: 1;
         margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .brandPresentation {
+        &>p {
+            width: 100%;
+        }
     }
 }

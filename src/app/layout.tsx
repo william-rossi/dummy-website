@@ -4,6 +4,7 @@ import Header from '@/components/Header/Header'
 import WebsiteConfig from '@/components/FloatButtons/WebsiteConfig/WebsiteConfig'
 import { ThemeProvider } from '@/context/ThemeContext'
 import WhatsApp from '@/components/FloatButtons/WhatsApp/WhatsApp'
+import Footer from '@/components/Footer/Footer'
 
 export const metadata = {
   title: 'Your brand',
@@ -30,6 +31,7 @@ export default function RootLayout({
           </main>
           <WebsiteConfig />
           <WhatsApp />
+          <Footer />
         </body>
       </ThemeProvider>
     </html>

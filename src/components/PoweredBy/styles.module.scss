@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    margin-bottom: 10vh;
+
+    &>h3 {
+        margin-bottom: 2vh;
+        margin-top: 2vh;
+    }
+}
+
+.powered {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+
+    &>img {
+        width: 15%;
+        filter: drop-shadow(0 0 0.5vh rgba(130, 130, 130, 0.71));
+    }
+}

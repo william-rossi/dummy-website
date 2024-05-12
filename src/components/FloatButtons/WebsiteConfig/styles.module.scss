@@ -17,6 +17,7 @@
 
     &:hover {
         box-shadow: 0 0 1vh rgba(255, 253, 253, 0.584);
+        transform: scale(1.1);
     }
 
     &>svg {
