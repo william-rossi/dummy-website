@@ -5,6 +5,7 @@ import WebsiteConfig from '@/components/FloatButtons/WebsiteConfig/WebsiteConfig
 import { ThemeProvider } from '@/context/ThemeContext'
 import WhatsApp from '@/components/FloatButtons/WhatsApp/WhatsApp'
 import Footer from '@/components/Footer/Footer'
+import HeadElements from '@/Helpers/headElements'
 
 export const metadata = {
   title: 'Your brand',
@@ -23,6 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={font.className}>
+      <head>
+        {HeadElements.GetFontLinks()}
+      </head>
       <ThemeProvider>
         <body>
           <Header />
