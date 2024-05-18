@@ -38,12 +38,21 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
     }, [isOpen])
 
     useEffect(() => {
-        document.addEventListener('click', (e) => {
+        const handleClick = (e: MouseEvent) => {
             const targetElement = e.target as HTMLElement;
-            if (targetElement.classList.toString() == styles.background)
-                handleOnClose()
-        })
+            if (targetElement.classList.toString() === styles.background) {
+                handleOnClose();
+            }
+        };
+        document.addEventListener('click', handleClick);
+        return () => {
+            document.removeEventListener('click', handleClick);
+        };
     }, [])
+
+    useEffect(() => {
+        setLogoInputValue(logoUrl || '');
+    }, [logoUrl]);
 
     if (!isOpen) return null;
 
@@ -58,8 +67,8 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                     <span>Select theme ({theme})</span>
                     <div className={styles.themes}>
                         {
-                            themesMap.map((theme, index) => (
-                                <span key={index} onClick={() => setTheme(theme)}>{theme.replaceAll('-', ' ')}</span>
+                            themesMap.map((theme) => (
+                                <span key={theme} onClick={() => setTheme(theme)}>{theme.replaceAll('-', ' ')}</span>
                             ))
                         }
                     </div>
@@ -68,9 +77,9 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                     <span>Select font ({font})</span>
                     <div className={styles.themes}>
                         {
-                            fontsMap.map((font, index) => (
+                            fontsMap.map((font) => (
                                 <span
-                                    key={index}
+                                    key={font}
                                     style={font !== 'default' ? { fontFamily: font } : undefined}
                                     onClick={() => setFont(font)}>
                                     {font.replaceAll('-', ' ')}
@@ -85,16 +94,21 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                         <p onClick={() => setIsLogoFile(!isLogoFile)}>{isLogoFile ? "Choose URL" : "Choose file"}</p>
                     </div>
                     <div>
-                        {
-                            isLogoFile ?
-                                <input accept="image/*" onClick={fileImage} id={'imgInput'} type={'file'} />
-                                :
-                                <>
-                                    <input value={logoInputValue} defaultValue={logoUrl ?? ""} onChange={(e) => setLogoInputValue(e.target.value)} placeholder='URL' />
-                                    <span onClick={() => setLogoUrl(logoInputValue.trim() ?? "")}>Save</span>
-                                    {logoUrl && <div onClick={() => { setLogoUrl(""); setLogoInputValue("") }}>X</div>}
-                                </>
-                        }
+                        {isLogoFile ? (
+                            <input value={""} accept="image/*" onClick={fileImage} id={'imgInput'} type={'file'} />
+                        ) : (
+                            <>
+                                <input
+                                    value={logoInputValue}
+                                    onChange={(e) => setLogoInputValue(e.target.value)}
+                                    placeholder='URL'
+                                />
+                                <span onClick={() => setLogoUrl(logoInputValue.trim())}>Save</span>
+                                {logoUrl && (
+                                    <div onClick={() => { setLogoUrl(''); setLogoInputValue(''); }}>X</div>
+                                )}
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

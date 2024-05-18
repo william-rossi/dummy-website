@@ -50,11 +50,16 @@ const Header = () => {
     }
 
     useEffect(() => {
-        document.addEventListener('click', (e) => {
+        const handleClick = (e: MouseEvent) => {
             const targetElement = e.target as HTMLElement;
-            if (targetElement.classList.toString() == styles.background)
-                handleOnClose()
-        })
+            if (targetElement.classList.toString() === styles.background) {
+                handleOnClose();
+            }
+        };
+        document.addEventListener('click', handleClick);
+        return () => {
+            document.removeEventListener('click', handleClick);
+        };
     }, [])
 
     return (
