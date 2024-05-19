@@ -14,7 +14,7 @@ const Section1 = () => {
     return (
         <section className={styles.container}>
             <div className={styles.brandPresentation}>
-                <h1 suppressContentEditableWarning contentEditable spellCheck={false}>Your brand's amazing tex here!</h1>
+                <h1 suppressContentEditableWarning contentEditable spellCheck={false}>Your brand{"'"}s amazing tex here!</h1>
                 <p suppressContentEditableWarning contentEditable spellCheck={false}>Lorem ipsum dolor sit amet. Sit debitis quod et quis sunt et accusantium libero est possimus quaerat et voluptatum atque est vitae enim.</p>
                 <ButtonRegisterLead />
             </div>
