@@ -8,7 +8,7 @@ interface InputImageProps {
 
 const InputImage = ({ imgId, inputId }: InputImageProps) => {
     return (
-        <input onClick={() => Utils.addImage(imgId, inputId)} accept="image/*" id={inputId} type={'file'} style={{ position: 'absolute', zIndex: -1, opacity: 0 }} />
+        <input onClick={() => Utils.addImage(imgId, inputId)} accept="image/*" id={inputId} type={'file'} style={{ position: 'absolute', zIndex: -1, opacity: 0, left: 0, top: 0 }} />
     )
 }
 
