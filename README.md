@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Dummy Website
 
-## Getting Started
+## Description
 
-First, run the development server:
+Dummy Website is a landing page project built with Next.js, TypeScript, and Sass that allows users to customize the site according to their preferences. Users can choose from various predefined themes, different font types, and change images in sections for a personalized view.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **TypeScript**: JavaScript superset that adds static typing.
+- **Sass**: CSS extension that allows the use of variables, nesting, mixins, inheritance, and more.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Customizable Themes**: Various predefined themes available for selection.
+- **Font Selection**: Different font types to customize the website text.
+- **Image Replacement**: Ability to change images in sections for personalized viewing.
 
-## Learn More
+## Installation
 
-To learn more about Next.js, take a look at the following resources:
+To start using the project, follow the steps below:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    git clone https://github.com/william-rossi/dummy-website.git
+    cd dummy-website
+    ```
 
-## Deploy on Vercel
+2. Install dependencies:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Available Scripts
+
+In the project directory, you can run:
+
+### `npm run dev`
+
+Starts the development server.
+
+Open [http://localhost:3000](http://localhost:3000) to view the project in the browser.
+
+### `npm run build`
+
+Compiles the project for production.
+
+### `npm start`
+
+Starts the server to serve the application in production.
+
+### `npm run lint`
+
+Checks the code for problems using ESLint.
