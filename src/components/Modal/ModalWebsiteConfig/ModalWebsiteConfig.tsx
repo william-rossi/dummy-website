@@ -76,7 +76,7 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                 <div className={styles.configFeatures}>
                     <span>Select font ({font})</span>
                     <div className={styles.themes}>
-                        {/* {
+                        {
                             fontsMap.map((font) => (
                                 <span
                                     key={font}
@@ -85,7 +85,7 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                                     {font.replaceAll('-', ' ')}
                                 </span>
                             ))
-                        } */}
+                        }
                     </div>
                 </div>
                 <div className={styles.setLogoContainer}>

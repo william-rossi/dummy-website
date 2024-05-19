@@ -128,15 +128,12 @@
         padding-right: 2.5vh;
         border-radius: 0.5vh;
         background-color: var(--background-color);
-        box-shadow: 0 0 3vh rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(0.5vh);
         border: 0.2vh solid var(--highlight-color);
-        font-weight: 500;
         color: var(--text-color);
         cursor: pointer;
-        font-weight: bold;
         text-transform: capitalize;
         transition: .1s;
+        font-weight: bold;
 
         &:hover {
             filter: brightness(1.2);
@@ -147,10 +144,12 @@
 @keyframes popup {
     from {
         opacity: 0;
+        transform: scale(0.9);
     }
 
     to {
         opacity: 1;
+        transform: scale(1);
     }
 }
 
