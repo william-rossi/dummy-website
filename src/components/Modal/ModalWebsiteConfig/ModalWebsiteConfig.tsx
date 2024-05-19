@@ -80,7 +80,6 @@ const ModalWebsiteConfig = ({ isOpen, onClose }: ModalConfigProps) => {
                             fontsMap.map((font) => (
                                 <span
                                     key={font}
-                                    style={font !== 'default' ? { fontFamily: font } : undefined}
                                     onClick={() => setFont(font)}>
                                     {font.replaceAll('-', ' ')}
                                 </span>

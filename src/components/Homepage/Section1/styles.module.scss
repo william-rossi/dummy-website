@@ -7,6 +7,10 @@
     flex-direction: column;
     gap: 5vh;
     @include flexCenter;
+
+    &>img {
+        cursor: alias;
+    }
 }
 
 .brandPresentation {

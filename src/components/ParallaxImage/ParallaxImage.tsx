@@ -4,7 +4,9 @@ interface IParallaxImage {
     src: string,
     alt: string,
     classname?: string,
-    strength?: number
+    strength?: number,
+    id?: string,
+    onClick?: () => void
 }
 
 const ParallaxImage = (props: IParallaxImage) => {
@@ -41,6 +43,8 @@ const ParallaxImage = (props: IParallaxImage) => {
 
     return (
         <img
+            onClick={props.onClick}
+            id={props.id}
             src={props.src}
             alt={props.alt}
             className={props.classname}
