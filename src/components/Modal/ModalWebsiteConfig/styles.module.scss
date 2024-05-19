@@ -62,6 +62,7 @@
         font-size: 2.5vh;
         display: grid;
         place-items: center;
+        text-shadow: 0 0 0.1vh rgba(255, 255, 255, 0.675);
     }
 }
 
@@ -72,6 +73,7 @@
         font-size: 2.5vh;
         display: grid;
         place-items: center;
+        text-shadow: 0 0 0.1vh rgba(255, 255, 255, 0.675);
     }
 
     &>div {
@@ -111,6 +113,9 @@
 
     &>p {
         cursor: pointer;
+        background-color: var(--background-color);
+        padding: 0 1vh 0 1vh;
+        border-radius: 0.5vh;
         font-size: 2vh;
     }
 }
